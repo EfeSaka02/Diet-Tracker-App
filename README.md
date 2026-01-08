@@ -1,50 +1,236 @@
-# Welcome to your Expo app 👋
+# 🥗 Diet Tracker App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A comprehensive mobile diet tracking application built with React Native and Expo. Track your daily nutrition, manage meals, and achieve your health goals with multi-language support and an intuitive interface.
 
-## Get started
+## ✨ Features
 
-1. Install dependencies
+### 📊 Nutrition Tracking
+- **Daily Calorie Monitoring**: Set and track your daily calorie goals
+- **Macro Distribution**: Visualize protein, fat, and carbohydrate intake with interactive graphs
+- **Detailed Nutrition Info**: Track calories, protein, fat, carbs, sugar, and sodium for each meal
 
-   ```bash
-   npm install
-   ```
+### 🍽️ Meal Management
+- **Multiple Meal Types**: Breakfast, lunch, dinner, and snacks
+- **Flexible Unit System**: Support for grams, pieces, slices, and milliliters
+- **50+ Food Database**: Pre-loaded with common foods and their nutritional values
+- **Date Navigation**: View and manage meals from previous days
+- **Easy Meal Deletion**: Remove meals with a single tap
 
-2. Start the app
+### 👤 Profile & Settings
+- **Personal Information**: Track age, gender, height, weight, and activity level
+- **Weight History**: Monitor weight changes over time with visual progress indicators
+- **Customizable Goals**: Update your daily calorie target anytime
+- **Data Management**: Reset all data when needed
 
-   ```bash
-   npx expo start
-   ```
+### 🌍 Multi-Language Support
+- **3 Languages**: English, Turkish (Türkçe), and Polish (Polski)
+- **Automatic Detection**: App language adapts to device settings
+- **Seamless Translation**: All UI elements translated including dates and units
 
-In the output, you'll find options to open the app in a
+### 🎨 User Experience
+- **Clean Interface**: Modern, intuitive design with smooth animations
+- **Dark Mode Modals**: Easy-on-the-eyes modal dialogs
+- **Progress Visualization**: Color-coded progress bars and graphs
+- **Tab Navigation**: Quick access to Home, Explore, and Profile screens
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📱 Screenshots
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Home Screen
+![IMG_2745](https://github.com/user-attachments/assets/425324a7-93fa-4fc9-a170-51725536dc0d)
 
-## Get a fresh project
 
-When you're ready, run:
+### Explore Screen
+![IMG_2749](https://github.com/user-attachments/assets/2a6ad165-0fc9-4d8b-97fb-14598f2e0971)
 
+
+### Nutrition Details
+![IMG_2744](https://github.com/user-attachments/assets/205dfa7d-7476-4049-957a-49b9f1748398)
+
+
+
+## 🛠️ Technologies
+
+- **Framework**: React Native with Expo
+- **Language**: TypeScript
+- **Navigation**: Expo Router
+- **Storage**: AsyncStorage for persistent data
+- **Internationalization**: i18n-js with expo-localization
+- **UI Components**: React Native built-in components
+- **Build System**: EAS Build
+
+## 📦 Installation
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI
+
+### Setup
+
+1. **Clone the repository**
 ```bash
-npm run reset-project
+git clone https://github.com/YOUR_USERNAME/Diet-Tracker-App.git
+cd Diet-Tracker-App
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-## Learn more
+3. **Start the development server**
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. **Run on device**
+- Press `a` for Android
+- Press `i` for iOS (macOS only)
+- Scan QR code with Expo Go app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🚀 Building APK
 
-## Join the community
+### Using EAS Build
 
-Join our community of developers creating universal apps.
+1. **Install EAS CLI**
+```bash
+npm install -g eas-cli
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+2. **Login to Expo**
+```bash
+eas login
+```
+
+3. **Configure build**
+```bash
+eas build:configure
+```
+
+4. **Build APK**
+```bash
+eas build --platform android --profile preview
+```
+
+5. **Download APK**
+- Build link will appear in terminal
+- Open link in browser
+- Click "Install" or "Download"
+
+## 📂 Project Structure
+```
+Diet-Tracker-App/
+├── app/
+│   ├── (tabs)/
+│   │   ├── index.tsx          # Home screen
+│   │   ├── explore.tsx        # Food search and add
+│   │   ├── profile.tsx        # User profile
+│   │   └── _layout.tsx        # Tab navigation
+│   ├── screens/
+│   │   └── OnboardingScreen.tsx  # Initial setup
+│   ├── locales/
+│   │   ├── en.json            # English translations
+│   │   ├── tr.json            # Turkish translations
+│   │   └── pl.json            # Polish translations
+│   ├── data/
+│   │   └── foods.json         # Food database
+│   └── utils/
+│       └── i18n.ts            # Internationalization config
+├── assets/                     # Images and icons
+├── components/                 # Reusable components
+├── app.json                   # Expo configuration
+├── eas.json                   # EAS Build configuration
+└── package.json               # Dependencies
+```
+
+## 🌐 Language Support
+
+The app automatically detects your device language and displays content in:
+- 🇬🇧 English (default)
+- 🇹🇷 Turkish
+- 🇵🇱 Polish
+
+To add more languages:
+1. Create a new JSON file in `app/locales/`
+2. Add translations for all keys
+3. Import in `app/utils/i18n.ts`
+4. Add language code to supported languages array
+
+## 📊 Data Storage
+
+All data is stored locally using AsyncStorage:
+- **User Data**: Personal information and calorie goals
+- **Meals**: Complete meal history with dates
+- **Weight History**: Historical weight entries
+
+## 🔧 Configuration
+
+### Daily Calorie Calculation
+
+The app uses the Harris-Benedict equation to calculate daily calorie needs:
+
+**For Men:**
+```
+BMR = 88.362 + (13.397 × weight) + (4.799 × height) - (5.677 × age)
+```
+
+**For Women:**
+```
+BMR = 447.593 + (9.247 × weight) + (3.098 × height) - (4.330 × age)
+```
+
+Then multiplied by activity level factor (1.2 - 1.9)
+
+## 🐛 Known Issues
+
+- None currently reported
+
+## 🚧 Future Enhancements
+
+- [ ] Cloud sync across devices
+- [ ] Barcode scanner for food items
+- [ ] Custom food entry
+- [ ] Meal planning and recipes
+- [ ] Export data to CSV
+- [ ] Water intake tracking
+- [ ] Exercise tracking
+- [ ] Social features and challenges
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Developer
+
+**Efe Saka**
+- GitHub: [@EfeSaka02](https://github.com/EfeSaka02)
+- Email: efesaka39@gmail.com
+
+## 🙏 Acknowledgments
+
+- Food nutritional data based on USDA database
+- Icons from SF Symbols and emoji
+- Built with Expo and React Native community tools
+
+## 📱 Download
+
+### Android APK
+[Download Latest Release](https://expo.dev/accounts/efe_saka/projects/Mobile_Diet_Application/builds/latest)
+
+*Compatible with Android 5.0 (API 21) and above*
+
+---
+
+**Made with using React Native & Expo**
+
+---
+
+## 🔄 Version History
+
+### Version 1.0.0 (January 2026)
+- Initial release
+- Multi-language support (EN, TR, PL)
+- Flexible unit system (g, piece, slice, ml)
+- Daily nutrition tracking
+- Weight monitoring
+- 50+ food database
