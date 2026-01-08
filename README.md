@@ -42,11 +42,18 @@ A comprehensive mobile diet tracking application built with React Native and Exp
 
 ### Explore Screen
 ![Küçük IMG_2744 ](https://github.com/user-attachments/assets/2a1489a9-ae65-4c35-b2a4-929272af699b)
+![Küçük Ekran Resmi 2026-01-08 17 14 49 ](https://github.com/user-attachments/assets/1228b9ee-bb0f-48f9-94cc-122fb06f1b42)
+
 
 
 
 ### Nutrition Details
 ![Küçük IMG_2749 ](https://github.com/user-attachments/assets/4c7498e2-eaa2-40cd-8e1b-7a52a32663c3)
+
+
+### Profile Screen
+![Küçük Ekran Resmi 2026-01-08 17 13 14 ](https://github.com/user-attachments/assets/83010625-7c67-4f6a-a760-f92c07582f8d)
+
 
 
 
