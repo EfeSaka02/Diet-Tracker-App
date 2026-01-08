@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "name": "Chicken Breast",
+    "category": "Protein",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.65,
+      "protein": 0.31,
+      "fat": 0.036,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.074
+    }
+  },
+  {
+    "id": 2,
+    "name": "Rice Pilaf",
+    "category": "Carbonhydrate",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.3,
+      "protein": 0.027,
+      "fat": 0.003,
+      "carbs": 0.28,
+      "sugar": 0,
+      "sodium": 0.001
+    }
+  },
+  {
+    "id": 3,
+    "name": "Eggs (Boiled)",
+    "category": "Protein",
+    "unit": "piece",
+    "unitWeight": 50,
+    "perGram": {
+      "calories": 1.55,
+      "protein": 0.13,
+      "fat": 0.11,
+      "carbs": 0.011,
+      "sugar": 0.01,
+      "sodium": 0.124
+    }
+  },
+  {
+    "id": 4,
+    "name": "White Bread",
+    "category": "Carbonhydrate",
+    "unit": "slice",
+    "unitWeight": 30,
+    "perGram": {
+      "calories": 2.65,
+      "protein": 0.09,
+      "fat": 0.032,
+      "carbs": 0.49,
+      "sugar": 0.05,
+      "sodium": 0.491
+    }
+  },
+  {
+    "id": 5,
+    "name": "Whole Wheat Bread",
+    "category": "Carbonhydrate",
+    "unit": "slice",
+    "unitWeight": 35,
+    "perGram": {
+      "calories": 2.47,
+      "protein": 0.13,
+      "fat": 0.032,
+      "carbs": 0.41,
+      "sugar": 0.06,
+      "sodium": 0.5
+    }
+  },
+  {
+    "id": 6,
+    "name": "Banana",
+    "category": "Fruit",
+    "unit": "piece",
+    "unitWeight": 120,
+    "perGram": {
+      "calories": 0.89,
+      "protein": 0.011,
+      "fat": 0.003,
+      "carbs": 0.23,
+      "sugar": 0.12,
+      "sodium": 0.001
+    }
+  },
+  {
+    "id": 7,
+    "name": "Apple",
+    "category": "Fruit",
+    "unit": "piece",
+    "unitWeight": 180,
+    "perGram": {
+      "calories": 0.52,
+      "protein": 0.003,
+      "fat": 0.002,
+      "carbs": 0.14,
+      "sugar": 0.1,
+      "sodium": 0.001
+    }
+  },
+  {
+    "id": 8,
+    "name": "Orange",
+    "category": "Fruit",
+    "unit": "piece",
+    "unitWeight": 130,
+    "perGram": {
+      "calories": 0.47,
+      "protein": 0.009,
+      "fat": 0.001,
+      "carbs": 0.12,
+      "sugar": 0.09,
+      "sodium": 0
+    }
+  },
+  {
+    "id": 9,
+    "name": "Milk (Full-Fat)",
+    "category": "Dairy Product",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.61,
+      "protein": 0.033,
+      "fat": 0.033,
+      "carbs": 0.047,
+      "sugar": 0.047,
+      "sodium": 0.044
+    }
+  },
+  {
+    "id": 10,
+    "name": "Yogurt (Full-Fat)",
+    "category": "Dairy Product",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.61,
+      "protein": 0.034,
+      "fat": 0.032,
+      "carbs": 0.047,
+      "sugar": 0.047,
+      "sodium": 0.046
+    }
+  },
+  {
+    "id": 11,
+    "name": "White Cheese",
+    "category": "Dairy Product",
+    "unit": "slice",
+    "unitWeight": 20,
+    "perGram": {
+      "calories": 2.64,
+      "protein": 0.14,
+      "fat": 0.21,
+      "carbs": 0.014,
+      "sugar": 0.014,
+      "sodium": 1.4
+    }
+  },
+  {
+    "id": 12,
+    "name": "Kashar Cheese",
+    "category": "Dairy Product",
+    "unit": "slice",
+    "unitWeight": 20,
+    "perGram": {
+      "calories": 3.76,
+      "protein": 0.23,
+      "fat": 0.3,
+      "carbs": 0.013,
+      "sugar": 0.013,
+      "sodium": 0.62
+    }
+  },
+  {
+    "id": 13,
+    "name": "Olive Oil",
+    "category": "Oil",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 8.84,
+      "protein": 0,
+      "fat": 1.0,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.002
+    }
+  },
+  {
+    "id": 14,
+    "name": "Butter",
+    "category": "Oil",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 7.17,
+      "protein": 0.009,
+      "fat": 0.81,
+      "carbs": 0.006,
+      "sugar": 0.006,
+      "sodium": 0.11
+    }
+  },
+  {
+    "id": 15,
+    "name": "Pasta (Boiled)",
+    "category": "Carbonhydrate",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.31,
+      "protein": 0.05,
+      "fat": 0.009,
+      "carbs": 0.25,
+      "sugar": 0.023,
+      "sodium": 0.006
+    }
+  },
+  {
+    "id": 16,
+    "name": "Ground Beef",
+    "category": "Protein",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 2.5,
+      "protein": 0.26,
+      "fat": 0.15,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.078
+    }
+  },
+  {
+    "id": 17,
+    "name": "Grilled Meatballs",
+    "category": "Protein",
+    "unit": "piece",
+    "unitWeight": 50,
+    "perGram": {
+      "calories": 2.97,
+      "protein": 0.27,
+      "fat": 0.2,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.05
+    }
+  },
+  {
+    "id": 18,
+    "name": "Salmon",
+    "category": "Protein",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 2.08,
+      "protein": 0.2,
+      "fat": 0.13,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.059
+    }
+  },
+  {
+    "id": 19,
+    "name": "Tuna",
+    "category": "Protein",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.16,
+      "protein": 0.26,
+      "fat": 0.008,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.247
+    }
+  },
+  {
+    "id": 20,
+    "name": "Lentil Soup",
+    "category": "Soup",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.44,
+      "protein": 0.024,
+      "fat": 0.014,
+      "carbs": 0.064,
+      "sugar": 0.019,
+      "sodium": 0.292
+    }
+  },
+  {
+    "id": 21,
+    "name": "Tomato",
+    "category": "Vegetable",
+    "unit": "piece",
+    "unitWeight": 150,
+    "perGram": {
+      "calories": 0.18,
+      "protein": 0.009,
+      "fat": 0.002,
+      "carbs": 0.039,
+      "sugar": 0.026,
+      "sodium": 0.005
+    }
+  },
+  {
+    "id": 22,
+    "name": "Cucumber",
+    "category": "Vegetable",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.15,
+      "protein": 0.007,
+      "fat": 0.001,
+      "carbs": 0.036,
+      "sugar": 0.017,
+      "sodium": 0.002
+    }
+  },
+  {
+    "id": 23,
+    "name": "Lettuce",
+    "category": "Vegetable",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.15,
+      "protein": 0.014,
+      "fat": 0.002,
+      "carbs": 0.029,
+      "sugar": 0.008,
+      "sodium": 0.028
+    }
+  },
+  {
+    "id": 24,
+    "name": "Carrot",
+    "category": "Vegetable",
+    "unit": "piece",
+    "unitWeight": 60,
+    "perGram": {
+      "calories": 0.41,
+      "protein": 0.009,
+      "fat": 0.002,
+      "carbs": 0.096,
+      "sugar": 0.047,
+      "sodium": 0.069
+    }
+  },
+  {
+    "id": 25,
+    "name": "Potato (Boiled)",
+    "category": "Vegetable",
+    "unit": "piece",
+    "unitWeight": 150,
+    "perGram": {
+      "calories": 0.87,
+      "protein": 0.02,
+      "fat": 0.001,
+      "carbs": 0.2,
+      "sugar": 0.009,
+      "sodium": 0.005
+    }
+  },
+  {
+    "id": 26,
+    "name": "Beans (Dried)",
+    "category": "Legume",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 3.47,
+      "protein": 0.21,
+      "fat": 0.012,
+      "carbs": 0.63,
+      "sugar": 0.02,
+      "sodium": 0.012
+    }
+  },
+  {
+    "id": 27,
+    "name": "Chickpeas (Boiled)",
+    "category": "Legume",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.64,
+      "protein": 0.09,
+      "fat": 0.026,
+      "carbs": 0.27,
+      "sugar": 0.048,
+      "sodium": 0.007
+    }
+  },
+  {
+    "id": 28,
+    "name": "Red Lentils",
+    "category": "Legume",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 3.53,
+      "protein": 0.26,
+      "fat": 0.011,
+      "carbs": 0.6,
+      "sugar": 0.02,
+      "sodium": 0.006
+    }
+  },
+  {
+    "id": 29,
+    "name": "Hazelnut",
+    "category": "Nuts",
+    "unit": "piece",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 5.79,
+      "protein": 0.21,
+      "fat": 0.5,
+      "carbs": 0.22,
+      "sugar": 0.044,
+      "sodium": 0.001
+    }
+  },
+  {
+    "id": 30,
+    "name": "Almond",
+    "category": "Nuts",
+    "unit": "piece",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 5.79,
+      "protein": 0.21,
+      "fat": 0.5,
+      "carbs": 0.22,
+      "sugar": 0.044,
+      "sodium": 0.001
+    }
+  },
+  {
+    "id": 31,
+    "name": "Walnut",
+    "category": "Nuts",
+    "unit": "piece",
+    "unitWeight": 3,
+    "perGram": {
+      "calories": 6.54,
+      "protein": 0.15,
+      "fat": 0.65,
+      "carbs": 0.14,
+      "sugar": 0.026,
+      "sodium": 0.002
+    }
+  },
+  {
+    "id": 32,
+    "name": "Chocolate (Milk)",
+    "category": "Sweet",
+    "unit": "piece",
+    "unitWeight": 10,
+    "perGram": {
+      "calories": 5.35,
+      "protein": 0.08,
+      "fat": 0.3,
+      "carbs": 0.59,
+      "sugar": 0.52,
+      "sodium": 0.079
+    }
+  },
+  {
+    "id": 33,
+    "name": "Honey",
+    "category": "Sweet",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 3.04,
+      "protein": 0.003,
+      "fat": 0,
+      "carbs": 0.82,
+      "sugar": 0.82,
+      "sodium": 0.004
+    }
+  },
+  {
+    "id": 34,
+    "name": "Jam",
+    "category": "Sweet",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 2.78,
+      "protein": 0.004,
+      "fat": 0.001,
+      "carbs": 0.69,
+      "sugar": 0.49,
+      "sodium": 0.032
+    }
+  },
+  {
+    "id": 35,
+    "name": "Tahini",
+    "category": "Sweet",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 5.95,
+      "protein": 0.17,
+      "fat": 0.54,
+      "carbs": 0.21,
+      "sugar": 0.005,
+      "sodium": 0.115
+    }
+  },
+  {
+    "id": 36,
+    "name": "Grape Molasses",
+    "category": "Sweet",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 2.93,
+      "protein": 0.009,
+      "fat": 0.001,
+      "carbs": 0.73,
+      "sugar": 0.55,
+      "sodium": 0.013
+    }
+  },
+  {
+    "id": 37,
+    "name": "Olive (Black)",
+    "category": "Oil",
+    "unit": "piece",
+    "unitWeight": 3,
+    "perGram": {
+      "calories": 1.15,
+      "protein": 0.008,
+      "fat": 0.106,
+      "carbs": 0.062,
+      "sugar": 0,
+      "sodium": 0.735
+    }
+  },
+  {
+    "id": 38,
+    "name": "Olive (Green)",
+    "category": "Oil",
+    "unit": "piece",
+    "unitWeight": 3,
+    "perGram": {
+      "calories": 1.45,
+      "protein": 0.01,
+      "fat": 0.15,
+      "carbs": 0.038,
+      "sugar": 0,
+      "sodium": 1.556
+    }
+  },
+  {
+    "id": 39,
+    "name": "Menemen",
+    "category": "Meal",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.54,
+      "protein": 0.055,
+      "fat": 0.13,
+      "carbs": 0.046,
+      "sugar": 0.03,
+      "sodium": 0.24
+    }
+  },
+  {
+    "id": 40,
+    "name": "Shepherd's Salad",
+    "category": "Salad",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.47,
+      "protein": 0.014,
+      "fat": 0.34,
+      "carbs": 0.05,
+      "sugar": 0.03,
+      "sodium": 0.089
+    }
+  },
+  {
+    "id": 41,
+    "name": "Dried Beans",
+    "category": "Meal",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.91,
+      "protein": 0.06,
+      "fat": 0.015,
+      "carbs": 0.16,
+      "sugar": 0.014,
+      "sodium": 0.3
+    }
+  },
+  {
+    "id": 42,
+    "name": "Vermicelli Soup",
+    "category": "Soup",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.36,
+      "protein": 0.011,
+      "fat": 0.015,
+      "carbs": 0.049,
+      "sugar": 0.008,
+      "sodium": 0.29
+    }
+  },
+  {
+    "id": 43,
+    "name": "Ayran",
+    "category": "Drink",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.38,
+      "protein": 0.019,
+      "fat": 0.015,
+      "carbs": 0.051,
+      "sugar": 0.051,
+      "sodium": 0.23
+    }
+  },
+  {
+    "id": 44,
+    "name": "Tea (No Sugar)",
+    "category": "Drink",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.01,
+      "protein": 0,
+      "fat": 0,
+      "carbs": 0.003,
+      "sugar": 0,
+      "sodium": 0.003
+    }
+  },
+  {
+    "id": 45,
+    "name": "Coffee (Turkish Coffee)",
+    "category": "Drink",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.02,
+      "protein": 0.001,
+      "fat": 0,
+      "carbs": 0.005,
+      "sugar": 0,
+      "sodium": 0.004
+    }
+  },
+  {
+    "id": 46,
+    "name": "Coke",
+    "category": "Drink",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.42,
+      "protein": 0,
+      "fat": 0,
+      "carbs": 0.106,
+      "sugar": 0.106,
+      "sodium": 0.11
+    }
+  },
+  {
+    "id": 47,
+    "name": "Fruit Juice (Orange)",
+    "category": "Drink",
+    "unit": "ml",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.45,
+      "protein": 0.007,
+      "fat": 0.002,
+      "carbs": 0.104,
+      "sugar": 0.085,
+      "sodium": 0.001
+    }
+  },
+  {
+    "id": 48,
+    "name": "Bulgur Pilaf",
+    "category": "Carbonhydrate",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 0.83,
+      "protein": 0.03,
+      "fat": 0.002,
+      "carbs": 0.19,
+      "sugar": 0.006,
+      "sodium": 0.005
+    }
+  },
+  {
+    "id": 49,
+    "name": "Lamb Chops",
+    "category": "Protein",
+    "unit": "piece",
+    "unitWeight": 100,
+    "perGram": {
+      "calories": 2.94,
+      "protein": 0.25,
+      "fat": 0.21,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.072
+    }
+  },
+  {
+    "id": 50,
+    "name": "Turkey Breast",
+    "category": "Protein",
+    "unit": "g",
+    "unitWeight": 1,
+    "perGram": {
+      "calories": 1.35,
+      "protein": 0.3,
+      "fat": 0.007,
+      "carbs": 0,
+      "sugar": 0,
+      "sodium": 0.055
+    }
+  }
+]

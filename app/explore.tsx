@@ -11,16 +11,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import foodsData from "../data/foods.json"; // There is a json file that contains the nutritional values
-import { t } from "../utils/i18n";
+import foodsData from "./data/foods.json"; // There is a json file that contains the nutritional values
 
 interface Food {
   // Interface food defines the nutritional values a person should have this definitaion allows these values to be used reloably in calculations and on the screen
   id: number;
   name: string;
   category: string;
-  unit: string;
-  unitWeight: number;
   perGram: {
     calories: number;
     protein: number;
@@ -42,7 +39,7 @@ export default function ExploreScreen() {
   const foods: Food[] = foodsData; // We use the json file and we keep it in Food type
 
   const categories = [
-    t("all"),
+    "All",
     ...Array.from(new Set(foods.map((food) => food.category))), // These codes written for making the categories unique and I used map to make categories that we entered a food
   ];
 
@@ -53,36 +50,27 @@ export default function ExploreScreen() {
       .toLowerCase()
       .includes(searchQuery.toLowerCase()); // food.name.toLowercase() That's code for example we wrote APPLE in search and this food written like apple so the system will be change it like apple and also searchQuery.toLowerCase() for if we wrote ap the system will show us the similar foods like apple for example
     const matchesCategory =
-      selectedCategory === t("all") || food.category === selectedCategory;
+      selectedCategory === "All" || food.category === selectedCategory;
     return matchesSearch && matchesCategory; // if the search contains the both conditions it'll be return
   });
 
   const handleSelectFood = (food: Food) => {
     setSelectedFood(food); // And this code will be print the food to statement that we wrote up this will be print the useState null to food that const selectedFood
-    if (food.unit === "g" || food.unit === "ml") {
-      setAmount("100");
-    } else if (food.unit === "piece" || food.unit === "slice") {
-      setAmount("1");
-    } // That's the default amount of grams of the food that we have chosen
+    setAmount("100"); // That's the default amount of grams of the food that we have chosen
     setModalVisible(true);
   };
 
   const calculateNutrition = () => {
     if (!selectedFood) return null;
-    const amountValue = parseFloat(amount) || 0;
-    const grams = amountValue * selectedFood.unitWeight;
+    const grams = parseFloat(amount) || 0;
     return {
       calories: Math.round(selectedFood.perGram.calories * grams), // That's calculates food's calories food's pergram calories multiply by gram that we ate and rounds the nearest integer number
       protein: Math.round(selectedFood.perGram.protein * grams * 10) / 10, // We added 10 multiply and divide for the calculating like pointer for example 5.2 gram we didn't do that in calories because calories rounds the integer but protein fat carbs and sugar no needed the rounding
       fat: Math.round(selectedFood.perGram.fat * grams * 10) / 10,
       carbs: Math.round(selectedFood.perGram.carbs * grams * 10) / 10,
       sugar: Math.round(selectedFood.perGram.sugar * grams * 10) / 10,
-      sodium: Math.round(selectedFood.perGram.sodium * grams * 10) / 10, // We muliplyed and divided by 1000 because of sodium is measured in milligrams and even very small values matter so we mutliplied and divided by 1000
+      sodium: Math.round(selectedFood.perGram.sodium * grams * 1000) / 1000, // We muliplyed and divided by 1000 because of sodium is measured in milligrams and even very small values matter so we mutliplied and divided by 1000
     };
-  };
-
-  const getUnitLabel = (unit: string) => {
-    return t(unit);
   };
 
   const addFood = async () => {
@@ -100,7 +88,6 @@ export default function ExploreScreen() {
       foodId: selectedFood.id,
       foodName: selectedFood.name,
       amount: parseFloat(amount), // That's the amount of grams that we ate
-      unit: selectedFood.unit,
       mealType,
       date: today,
       nutrition,
@@ -113,7 +100,7 @@ export default function ExploreScreen() {
       meals.push(meal); // And this push the meals that transformed to understandable for Javascript so that'll be push into the meal object
       await AsyncStorage.setItem("meals", JSON.stringify(meals)); // Then we transform the string the updated new list and storage the phone key of the name meals
 
-      Alert.alert("Success", `${selectedFood.name} ${t("added")}!`);
+      Alert.alert("Success", `${selectedFood.name} added.`);
       setModalVisible(false); // That turn off the modal
       setAmount("100"); // That's the updates the default gram's amount and it's 100
     } catch (error) {
@@ -125,11 +112,11 @@ export default function ExploreScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>🔍 {t("foodSearch")}</Text>
+      <Text style={styles.title}>🔍 Food Search</Text>
 
       <TextInput
         style={styles.searchInput}
-        placeholder={t("searchPlaceholder")}
+        placeholder="Food search...(eg: chicken, beef)"
         value={searchQuery}
         onChangeText={setSearchQuery}
       />
@@ -195,9 +182,7 @@ export default function ExploreScreen() {
               {/* If content is long so with this code we can scroll the page */}
               <Text style={styles.modalTitle}>{selectedFood?.name}</Text>
               <View style={styles.amountSection}>
-                <Text style={styles.sectionTitle}>
-                  {t("addToFoodDiary").toUpperCase()}
-                </Text>
+                <Text style={styles.sectionTitle}>Add to My Food Diary</Text>
                 <View style={styles.amountInputRow}>
                   {/* That's the row for input value and gram is side by side*/}
                   <TextInput
@@ -206,9 +191,7 @@ export default function ExploreScreen() {
                     onChangeText={setAmount} // This code updates the amount state of the gram of the food when the user types
                     keyboardType="numeric"
                   />
-                  <Text style={styles.unitText}>
-                    {selectedFood && getUnitLabel(selectedFood.unit)}
-                  </Text>
+                  <Text style={styles.unitText}>g</Text>
                   {/* Gram unit seperate text better alignment */}
                 </View>
               </View>
@@ -218,13 +201,13 @@ export default function ExploreScreen() {
                 <View style={styles.nutritionSection}>
                   <View style={styles.nutritionGrid}>
                     <View style={styles.nutritionItem}>
-                      <Text style={styles.nutritionLabel}>{t("energy")}</Text>
+                      <Text style={styles.nutritionLabel}>Calories</Text>
                       <Text style={styles.nutritionValue}>
                         {nutrition.calories}
                       </Text>
                     </View>
                     <View style={styles.nutritionItem}>
-                      <Text style={styles.nutritionLabel}>{t("fat")}</Text>
+                      <Text style={styles.nutritionLabel}>Fat</Text>
                       <Text style={styles.nutritionValue}>
                         {nutrition.fat}g
                       </Text>
@@ -232,15 +215,13 @@ export default function ExploreScreen() {
                   </View>
                   <View style={styles.nutritionGrid}>
                     <View style={styles.nutritionItem}>
-                      <Text style={styles.nutritionLabel}>
-                        {t("carbohydrate")}
-                      </Text>
+                      <Text style={styles.nutritionLabel}>Carb</Text>
                       <Text style={styles.nutritionValue}>
                         {nutrition.carbs}g
                       </Text>
                     </View>
                     <View style={styles.nutritionItem}>
-                      <Text style={styles.nutritionLabel}>{t("protein")}</Text>
+                      <Text style={styles.nutritionLabel}>Protein</Text>
                       <Text style={styles.nutritionValue}>
                         {nutrition.protein}g
                       </Text>
@@ -251,49 +232,46 @@ export default function ExploreScreen() {
               {/* That's for shows the nutiritonla values of the food we consume */}
               {nutrition && (
                 <View style={styles.detailSection}>
-                  <Text style={styles.sectionTitle}>
-                    {t("nutritionalValue")}
-                  </Text>
+                  <Text style={styles.sectionTitle}>Nutritional Value</Text>
                   <View style={styles.portionRow}>
-                    <Text style={styles.portionText}>{t("portion")}</Text>
-                    <Text style={styles.portionValue}>
-                      {amount} {selectedFood && getUnitLabel(selectedFood.unit)}
-                    </Text>
+                    <Text style={styles.portionText}>Portion</Text>
+                    <Text style={styles.portionValue}>{amount}g</Text>
                   </View>
-                  <View style={styles.divider} />
+                  <View style={styles.divider} />{" "}
                   {/* That's seperate the portion and nutritional values */}
                   <View style={styles.detailRow}>
-                    <Text style={styles.detailLabel}>{t("energy")}</Text>
+                    <Text style={styles.detailLabel}>Energy</Text>
                     <Text style={styles.detailValue}>
                       {nutrition.calories} kcal
                     </Text>
                   </View>
                   <View style={styles.detailRow}>
-                    <Text style={styles.detailLabel}>{t("fat")}</Text>
+                    <Text style={styles.detailLabel}>Fat</Text>
                     <Text style={styles.detailValue}>{nutrition.fat}g</Text>
                   </View>
                   <View style={styles.detailRow}>
-                    <Text style={styles.detailLabel}>{t("carbohydrate")}</Text>
+                    <Text style={styles.detailLabel}>Carbonhydrate</Text>
                     <Text style={styles.detailValue}>{nutrition.carbs}g</Text>
                   </View>
                   <View style={styles.detailRow}>
-                    <Text style={styles.detailLabel}>{t("sugar")}</Text>
+                    <Text style={styles.detailLabel}> Sugar</Text>
                     <Text style={styles.detailValue}>{nutrition.sugar}g</Text>
                   </View>
                   <View style={styles.detailRow}>
-                    <Text style={styles.detailLabel}>{t("protein")}</Text>
+                    <Text style={styles.detailLabel}>Protein</Text>
                     <Text style={styles.detailValue}>{nutrition.protein}g</Text>
                   </View>
                   <View style={styles.detailRow}>
-                    <Text style={styles.detailLabel}>{t("salt")}</Text>
+                    <Text style={styles.detailLabel}>Salt</Text>
                     <Text style={styles.detailValue}>{nutrition.sodium}g</Text>
                   </View>
                 </View>
               )}
               {/* That's for chosing meal page */}
               <View style={styles.mealSection}>
+                {" "}
                 {/* That's main container of the chosing meal */}
-                <Text style={styles.sectionTitle}>{t("chooseMeal")}</Text>
+                <Text style={styles.sectionTitle}>Choose Your Meal</Text>
                 <View style={styles.mealButtons}>
                   {[
                     { key: "breakfast", label: "🍳 Breakfast" },
@@ -326,11 +304,11 @@ export default function ExploreScreen() {
                   style={styles.cancelButton}
                   onPress={() => setModalVisible(false)} // When the user pressed the cancel button this code turns off the modal with setModalvisible(false)
                 >
-                  <Text style={styles.cancelButtonText}>{t("cancel")}</Text>
+                  <Text style={styles.cancelButtonText}>Cancel</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.saveButton} onPress={addFood}>
                   {/* The user pressed the save button addFood function runs and nutrition values will calculated and store in the AsyncStorage after that modalvisible(false) turns off the modal */}
-                  <Text style={styles.saveButtonText}>{t("save")}</Text>
+                  <Text style={styles.saveButtonText}>Save</Text>
                 </TouchableOpacity>
               </View>
             </ScrollView>
