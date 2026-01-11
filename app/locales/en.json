@@ -43,6 +43,7 @@
   "piece": "piece",
   "slice": "slice",
   "ml": "ml",
+  "g" : "g",
   "personalInfo": "Personal Information",
   "name": "Name",
   "age": "Age",
